@@ -1,0 +1,7 @@
+rules:
+  - id: detect-insecure-sql
+    patterns:
+      - pattern: db.query("SELECT * FROM users WHERE username = " + $X)
+    massage: "Posible inyección SQL detectada"
+    languagues: [javascript]
+    severity: ERROR
